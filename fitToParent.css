@@ -1,0 +1,21 @@
+/*
+ * This is the base class of fitToParent.
+ * It uses translate and scale, so... that's off the hook.
+ *
+ * You can control the visibility of elements outside o the elment with overflow: hidden and visible.
+ * You can animate the scaling with transtitions.
+ * When using the 'pixel' option, you can also use image-rendering: pixelated.
+ *
+ * I didn't create classes for all these cases because they need to be use per case.
+ */
+
+.fitToParent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    /*overflow: visible;*/
+    /*overflow: hidden;*/
+    /*transition: scale 1s ease;*/
+    /*image-rendering: pixelated;*/
+}

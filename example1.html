@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./fitToParent.css"/>
+		<script src="./fitToParent.js"></script>
+		<style>
+			*,
+			*:after,
+			*:before {
+				box-sizing: border-box;
+			}
+			html,
+			body {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			#some-div {
+				width: 960px;
+				height: 720px;
+				border: 2px solid red;
+				display: flex;
+				align-items: flex-start;
+				justify-content: center;
+				text-align: center;
+				font-family: sans-serif;
+				padding: 2rem;
+			}
+			#another-div {
+				width: 640px;
+				height: 360px;
+				border: 2px solid green;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				font-family: sans-serif;
+				padding: 2rem;
+			}
+			#yet-another-div {
+				width: 400px;
+				height: 400px;
+				border: 2px solid blue;
+				display: flex;
+				align-items: flex-end;
+				justify-content: center;
+				text-align: center;
+				font-family: sans-serif;
+				padding: 2rem;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="some-div">
+			Scalable element, with optimized size for good chrome/chromium/edge rendering,<br>and capped.
+		</div>
+		<div id="another-div">
+			Fully scalable element, no cap, and fuzzy rendering on chrome/chromium/edge due to rounding up errors.
+		</div>
+		<div id="yet-another-div">
+			Pixel scaling, with no cap.
+		</div>
+
+		<script>
+			fitToParent.set('#some-div', 'optimal', 'yes');
+			fitToParent.set('#another-div');
+			fitToParent.set('#yet-another-div', 'pixel', 'no');
+		</script>
+	</body>
+</html>

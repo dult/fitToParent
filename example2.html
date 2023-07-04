@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./fitToParent.css"/>
+		<script src="./fitToParent.js"></script>
+		<style>
+			*,
+			*:after,
+			*:before {
+				box-sizing: border-box;
+			}
+			html,
+			body {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			#some-div {
+				width: 1280px;
+				height: 720px;
+				border: 2px solid red;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				font-family: sans-serif;
+			}
+			#left-div {
+				width: 160px;
+				height: 720px;
+				left: 0;
+				translate: 0 -50%;
+				border: 2px solid green;
+			}
+			#right-div {
+				width: 160px;
+				height: 720px;
+				left: initial;
+				right: 0;
+				translate: 0 -50%;
+				border: 2px solid blue;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="some-div">
+			With a setup like this, you can have content in the middle<br>and then scalable controls on the side.
+		</div>
+		<div id="left-div"></div>
+		<div id="right-div"></div>
+
+		<script>
+			fitToParent.set('#some-div', 'optimal', 'no');
+			fitToParent.set('#left-div', 'optimal', 'no');
+			fitToParent.set('#right-div', 'optimal', 'no');
+		</script>
+	</body>
+</html>
